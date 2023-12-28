@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>allUsers</title>
+    <style>
+        .add-user-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #800080;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-user-button:hover {
+            background-color: #6a006a;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 150px;
+            margin-top: 10px;
+        }
+
+        .action-button {
+            padding: 5px 10px;
+            margin-top: 5px;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .action-button:hover {
+            filter: brightness(90%);
+        }
+
+        .update-button {
+            background-color: #4CAF50;
+            color: white;
+            border: 2px solid #4CAF50;
+        }
+
+        .delete-button {
+            background-color: #FF0000;
+            color: white;
+            border: 2px solid #FF0000;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td contenteditable="true" th:text="${user.name}"></td>
+            <td contenteditable="true" th:text="${user.lastName}"></td>
+            <td contenteditable="true" th:text="${user.age}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="action-buttons">
+        <a class="action-button update-button" href="/user/update">Update</a>
+        <a class="action-button delete-button" href="/user/delete">Delete</a>
+    </div>
+
+    <a class="add-user-button" href="/user/newUser">Add New User</a>
+</div>
+
+</body>
+</html>
+
