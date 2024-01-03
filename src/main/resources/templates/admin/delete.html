@@ -7,12 +7,17 @@
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/user/delete}" id="deleteForm">
+<form th:method="POST" th:action="@{/admin/delete}" id="deleteForm">
     <label for="userId">Enter User ID to Delete: </label>
     <input type="text" name="id" id="userId">
     <br/>
     <input type="submit" value="Delete">
 </form>
 
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
+
 </body>
+
 </html>

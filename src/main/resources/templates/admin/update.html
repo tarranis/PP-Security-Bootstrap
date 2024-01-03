@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form th:action="@{/user/update}" th:method="post">
+<form th:action="@{/admin/update}" th:method="post">
     <label for="userId">User ID:</label>
     <input type="text" id="userId" name="id">
     <br>
@@ -21,6 +21,10 @@
     <input type="text" id="userAge" name="age">
     <br>
     <input type="submit" value="Update">
+</form>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
 </form>
 
 </body>

@@ -1,10 +1,12 @@
 package ru.kata.spring.boot_security.demo.models;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-public class Role {
+public class Role implements GrantedAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,8 +15,15 @@ public class Role {
     @Column
     private String name;
 
-    public Role() {
+    public Role() {}
 
+    public Role(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getAuthority() {
+        return getName();
     }
 
     public Long getId() {
@@ -35,6 +44,8 @@ public class Role {
 
     @Override
     public String toString() {
-        return "Role " + name;
+        return name;
     }
+
+
 }

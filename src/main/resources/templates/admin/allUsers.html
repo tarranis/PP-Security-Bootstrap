@@ -65,6 +65,8 @@
             <th>Name</th>
             <th>Last Name</th>
             <th>Age</th>
+            <th>Password</th>
+            <th>Roles</th>
         </tr>
         </thead>
         <tbody>
@@ -73,16 +75,21 @@
             <td contenteditable="true" th:text="${user.name}"></td>
             <td contenteditable="true" th:text="${user.lastName}"></td>
             <td contenteditable="true" th:text="${user.age}"></td>
+            <td contenteditable="true" th:text="${user.password}"></td>
+            <td contenteditable="true" th:text="${user.roles}"></td>
         </tr>
         </tbody>
     </table>
 
     <div class="action-buttons">
-        <a class="action-button update-button" href="/user/update">Update</a>
-        <a class="action-button delete-button" href="/user/delete">Delete</a>
+        <a class="action-button update-button" href="/admin/update">Update</a>
+        <a class="action-button delete-button" href="/admin/delete">Delete</a>
     </div>
 
-    <a class="add-user-button" href="/user/newUser">Add New User</a>
+    <a class="add-user-button" href="/admin/newUser">Add New User</a>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
 </div>
 
 </body>
