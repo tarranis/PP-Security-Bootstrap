@@ -23,7 +23,7 @@ public class User implements UserDetails{
     private String lastName;
 
     @Column
-    private int age;
+    private Integer age;
 
     @Column
     private String password;
@@ -71,7 +71,7 @@ public class User implements UserDetails{
         return true;
     }
 
-    public User(String name, String lastName, int age, String password, List<Role> roles) {
+    public User(String name, String lastName, Integer age, String password, List<Role> roles) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
@@ -103,11 +103,11 @@ public class User implements UserDetails{
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -126,7 +126,8 @@ public class User implements UserDetails{
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 ", password='" + password + '\'' +

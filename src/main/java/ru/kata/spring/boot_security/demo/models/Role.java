@@ -23,7 +23,7 @@ public class Role implements GrantedAuthority {
 
     @Override
     public String getAuthority() {
-        return getName();
+        return name;
     }
 
     public Long getId() {
@@ -46,6 +46,7 @@ public class Role implements GrantedAuthority {
     public String toString() {
         return name;
     }
-
-
 }
+
+
+
