@@ -14,14 +14,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class RestApiController {
+public class AdminRestApiController {
 
     private final UserService userService;
 
     private final RoleRepository roleRepository;
 
     @Autowired
-    public RestApiController(UserService userService, RoleRepository roleRepository) {
+    public AdminRestApiController(UserService userService, RoleRepository roleRepository) {
         this.userService = userService;
         this.roleRepository = roleRepository;
     }
